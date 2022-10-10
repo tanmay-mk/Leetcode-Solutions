@@ -24,17 +24,7 @@ int binaryGap(int n){
         }
         else
         {
-            
-            if(current_distance == 0)
-            {
-                flag = true; 
-            }
-            else
-            {
-                flag = false;
-            }
-            
-            if(current_distance > max_distance || flag == true)
+            if(current_distance > max_distance)
             {
                 flag= false;
                 max_distance = current_distance; 
