@@ -3,7 +3,6 @@
 int binaryGap(int n){
     
     int current_distance = 0, max_distance = 0; 
-    bool flag = false;
     
     /*get the index of first 1 in the number*/
     int firstIdx = 0;
@@ -26,7 +25,6 @@ int binaryGap(int n){
         {
             if(current_distance > max_distance)
             {
-                flag= false;
                 max_distance = current_distance; 
             }
             current_distance = 1;
