@@ -5,8 +5,6 @@ int maxArea(int* height, int heightSize){
     int max_area = 0;
     int length = 0, breadth = 0, area = 0; 
     
-    int maxLength = 0, maxBreadth = 0;
-    
     int i = 0, j = heightSize - 1;
     
     while(i <= j)
