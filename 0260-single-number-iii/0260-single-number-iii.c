@@ -21,8 +21,6 @@ int* singleNumber(int* nums, int numsSize, int* returnSize){
         xor ^= nums[i];
     }
     
-    //set_bit = (xor & ~(xor - 1));
-    
     if (xor <= INT_MIN)
     {
         xor = INT_MIN+1;
