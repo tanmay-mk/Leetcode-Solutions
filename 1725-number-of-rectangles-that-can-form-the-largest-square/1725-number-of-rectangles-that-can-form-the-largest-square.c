@@ -26,5 +26,7 @@ int countGoodRectangles(int** rectangles, int rectanglesSize, int* rectanglesCol
                 count++;
             }
         }
+    
+    free(minSides);
         return count; 
 }
