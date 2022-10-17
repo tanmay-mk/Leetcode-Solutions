@@ -8,11 +8,10 @@ bool* kidsWithCandies(int* candies, int candiesSize, int extraCandies, int* retu
     *returnSize = candiesSize; 
     
     bool *retArr = (bool *)malloc(sizeof(bool)*candiesSize);
-    memset(retArr, 0, sizeof(bool)*candiesSize);
+    memset(retArr, true, sizeof(bool)*candiesSize); //set it all to true by default
     
     for (int i = 0; i < candiesSize; i++)
     {
-        retArr[i] = true;   //set it to true by default
         int thisKidsCandies = candies[i]+extraCandies;
         for(int j = 0; j<candiesSize; j++)
         {
