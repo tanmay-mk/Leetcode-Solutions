@@ -24,42 +24,14 @@ int countMatches(char *** items, int itemsSize, int* itemsColSize, char * ruleKe
         rule = name;
     }
     
-    switch (rule)
+    for(int i = 0; i<itemsSize; i++)
     {
-        case type:
-            for(int i = 0; i<itemsSize; i++)
-            {
-                if(strcmp(ruleValue, items[i][type]) == 0)
-                {
-                    count++;
-                }
-            }
-        break;
-            
-        case color:
-            for(int i = 0; i<itemsSize; i++)
-            {
-                if(strcmp(ruleValue, items[i][color]) == 0)
-                {
-                    count++;
-                }
-            }
-        break;
-            
-        case name:
-            for(int i = 0; i<itemsSize; i++)
-            {
-                if(strcmp(ruleValue, items[i][name]) == 0)
-                {
-                    count++;
-                }
-            }
-        break;
-            
-        default:
-        break;
+        if(strcmp(ruleValue, items[i][rule]) == 0)
+        {
+            count++;
+        }
     }
-    
+   
     return count;
     
 }
