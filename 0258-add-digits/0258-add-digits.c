@@ -1,8 +1,6 @@
 
 
-int addDigits(int num){
-    
-    int temp_num = num; 
+int addDigits(int temp_num){
     
     int result = 0;
     while(temp_num > 0)
