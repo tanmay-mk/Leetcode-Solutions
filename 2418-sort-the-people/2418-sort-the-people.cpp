@@ -4,6 +4,7 @@ public:
         
         vector<int> sortedHeights (heights);
         
+        /*sort array in descending order*/
         sort(sortedHeights.begin(), sortedHeights.end(), greater<int>());
         
         vector<string> sortedNames; 
