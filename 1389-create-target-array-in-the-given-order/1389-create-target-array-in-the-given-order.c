@@ -10,9 +10,7 @@ int* createTargetArray(int* nums, int numsSize, int* index, int indexSize, int* 
     
     for(int i=0; i<numsSize; i++)
     {
-        int num = nums[i];
         int idx = index[i];
-        
         if(retArr[idx] != -1)
         {
             for(int j=numsSize-1; j>=idx; j--)
