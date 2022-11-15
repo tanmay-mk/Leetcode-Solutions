@@ -24,8 +24,6 @@ int* createTargetArray(int* nums, int numsSize, int* index, int indexSize, int* 
             }
         }
         retArr[idx] = nums[i];
-        
-
     }
     return retArr; 
 }
