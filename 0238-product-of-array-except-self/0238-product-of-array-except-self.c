@@ -9,11 +9,18 @@ int* productExceptSelf(int* nums, int numsSize, int* returnSize){
     bool zero = false; 
     int zeroes = 0;
     
+    int *retArr = (int *)malloc(sizeof(int)*numsSize);
+    memset(retArr, 0, (sizeof(int)*numsSize));
+    
     for(int i=0; i<numsSize; i++)
     {
         if (nums[i] == 0)
         {
             zeroes++;
+            if (zeroes > 1)
+            {
+                return retArr;
+            }
             zero = true;
         }
         else
@@ -21,15 +28,6 @@ int* productExceptSelf(int* nums, int numsSize, int* returnSize){
             product *= nums[i];
         }
     }
-    
-    int *retArr = (int *)malloc(sizeof(int)*numsSize);
-    memset(retArr, 0, (sizeof(int)*numsSize));
-    
-    if (zeroes > 1)
-    {
-        return retArr;
-    }
-    
     
     for(int i=0; i<numsSize; i++)
     {
