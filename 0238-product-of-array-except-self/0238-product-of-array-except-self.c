@@ -6,19 +6,11 @@ int* productExceptSelf(int* nums, int numsSize, int* returnSize){
     *returnSize = numsSize; 
     
     int product=1; 
-    int sum = 0;
     bool zero = false; 
-    bool nonzero = false;
     int zeroes = 0;
     
     for(int i=0; i<numsSize; i++)
     {
-        if (nonzero == false && nums[i] != 0)
-        {
-            nonzero = true;
-        }
-        
-        sum += nums[i];
         if (nums[i] == 0)
         {
             zeroes++;
@@ -33,11 +25,7 @@ int* productExceptSelf(int* nums, int numsSize, int* returnSize){
     int *retArr = (int *)malloc(sizeof(int)*numsSize);
     memset(retArr, 0, (sizeof(int)*numsSize));
     
-    if (sum == 0 && nonzero == false)
-    {
-        return retArr; 
-    }
-    else if (zeroes > 1)
+    if (zeroes > 1)
     {
         return retArr;
     }
