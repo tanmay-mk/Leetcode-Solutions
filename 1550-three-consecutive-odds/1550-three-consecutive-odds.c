@@ -1,21 +1,15 @@
-bool threeConsecutiveOdds(int* arr, int arrSize){
-
-    int count = 0; 
-    
-    for(int i=0; i<arrSize; i++)
+bool isOdd(int x) 
+{
+    return (x&1);
+}
+bool threeConsecutiveOdds(int* arr, int arrSize)
+{
+    for (int i = 0; i < arrSize - 2; i++) 
     {
-        if ((arr[i] & 1) == 1)
+        if (isOdd(arr[i]) && isOdd(arr[i+1]) && isOdd(arr[i+2])) 
         {
-            count++; 
-            if (count > 2)
-            {
-                return true; 
-            }    
-        }
-        else
-        {
-            count = 0;
+            return true;
         }
     }
-    return false; 
+    return false;
 }
