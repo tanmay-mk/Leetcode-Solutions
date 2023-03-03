@@ -1,10 +1,9 @@
+char * removeVowels(char * str){
 
-void rmv(char c, char * str)
-{
     int length = strlen(str); 
     for(int i=0; i<length; i++)
     {
-        if (str[i] == c)
+        if ((str[i] == 'a') || (str[i] == 'e') || (str[i] == 'i') || (str[i] == 'o') || (str[i] == 'u'))
         {
             for(int j=i; j<length; j++)
             {
@@ -14,16 +13,5 @@ void rmv(char c, char * str)
             length--; i--;
         }
     }
-}
-
-
-char * removeVowels(char * s){
-
-    rmv('a', s);
-    rmv('e', s);
-    rmv('i', s);
-    rmv('o', s);
-    rmv('u', s); 
-    
-    return s;
+    return str;
 }
