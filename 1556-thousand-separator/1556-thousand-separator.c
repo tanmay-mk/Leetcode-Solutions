@@ -43,7 +43,5 @@ char * thousandSeparator(int n){
         str[idx-i-1] ^= str[i];
         str[i] ^= str[idx-i-1];
     }
-    
-    
     return str;    
 }
