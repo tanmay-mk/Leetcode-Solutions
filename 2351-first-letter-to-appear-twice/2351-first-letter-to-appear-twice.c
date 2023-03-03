@@ -16,6 +16,5 @@ char repeatedCharacter(char * s){
         }
     }
     
-    //return
     return s[minIdx];
 }
