@@ -1,7 +1,7 @@
 
-void rmv(char c, char * str, int *len)
+void rmv(char c, char * str)
 {
-    int length = *len; 
+    int length = strlen(str); 
     for(int i=0; i<length; i++)
     {
         if (str[i] == c)
@@ -14,27 +14,16 @@ void rmv(char c, char * str, int *len)
             length--; i--;
         }
     }
-    *len = length; 
 }
 
 
 char * removeVowels(char * s){
 
-    int len = strlen(s);
+    rmv('a', s);
+    rmv('e', s);
+    rmv('i', s);
+    rmv('o', s);
+    rmv('u', s); 
     
-    for(int i=0; i<len; i++)
-    {
-        if (
-                (s[i] == 'a') ||
-                (s[i] == 'e') ||
-                (s[i] == 'i') ||
-                (s[i] == 'o') ||
-                (s[i] == 'u')
-            )
-        {
-            rmv(s[i], s, &len); 
-            i--;
-        }
-    }
     return s;
 }
