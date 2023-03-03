@@ -28,12 +28,8 @@ char * thousandSeparator(int n){
         {
             flag = false;
             str[idx++] = '.'; 
-            str[idx++] = rem + '0'; 
         }
-        else
-        {
-            str[idx++] = rem + '0'; 
-        }
+        str[idx++] = rem + '0'; 
         n /= 10;
         count++; 
     }
