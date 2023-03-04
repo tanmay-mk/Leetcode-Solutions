@@ -4,6 +4,10 @@ char * reformatDate(char * date){
     
     int dLen = strlen(date);
     
+    
+    //[0][1][2][3][4][5][6][7][8][9]
+    //[Y][Y][Y][Y][-][M][M][-][D][D]
+    
     nDate[0] = date[dLen-4]; 
     nDate[1] = date[dLen-3]; 
     nDate[2] = date[dLen-2]; 
