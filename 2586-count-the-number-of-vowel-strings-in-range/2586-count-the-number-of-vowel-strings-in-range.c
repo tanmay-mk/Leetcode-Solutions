@@ -1,20 +1,22 @@
-bool isVowel(char c)
-{
-    switch(c)
-    {
-        case 'a':
-        case 'e':
-        case 'i':
-        case 'o':
-        case 'u':
-            return true; 
-        break; 
+#define IS_VOWEL(c) ((c == 'a')? true : ((c=='e')? true : ((c=='i')? true : ((c == 'o')? true : ((c == 'u')? true : false)))))
+
+// bool isVowel(char c)
+// {
+//     switch(c)
+//     {
+//         case 'a':
+//         case 'e':
+//         case 'i':
+//         case 'o':
+//         case 'u':
+//             return true; 
+//         break; 
             
-        default:
-        break; 
-    }
-    return false; 
-}
+//         default:
+//         break; 
+//     }
+//     return false; 
+// }
 
 int vowelStrings(char ** words, int wordsSize, int left, int right){
 
@@ -23,7 +25,7 @@ int vowelStrings(char ** words, int wordsSize, int left, int right){
     {
         int len = strlen(words[i]); 
         
-        if(isVowel(words[i][0]) && isVowel(words[i][len-1]))
+        if(IS_VOWEL(words[i][0]) && IS_VOWEL(words[i][len-1]))
         {
             count++; 
         }
