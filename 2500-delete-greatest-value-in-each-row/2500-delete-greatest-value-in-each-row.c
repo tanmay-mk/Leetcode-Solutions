@@ -47,5 +47,6 @@ int deleteGreatestValue(int** grid, int gridSize, int* gridColSize){
         sum += max(deleted, rows);
         cols--; 
     }
+    free(deleted); 
     return sum; 
 }
