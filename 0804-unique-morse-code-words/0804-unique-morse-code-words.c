@@ -1,5 +1,3 @@
-#define MAX(a, b) ((a > b)? a : b)
-
 int uniqueMorseRepresentations(char ** words, int wordsSize){
 
     char morsecode[26][5] = {
@@ -43,7 +41,6 @@ int uniqueMorseRepresentations(char ** words, int wordsSize){
     
     for(int i=0; i<wordsSize; i++)
     {
-        printf("%s\n", morse_arr[i]);
         free(morse_arr[i]);
     }
     free(morse_arr);
