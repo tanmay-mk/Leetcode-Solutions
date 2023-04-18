@@ -13,11 +13,13 @@ int* findErrorNums(int* nums, int numsSize, int* returnSize){
     memset(arr, 0, (sizeof(numChars_t)*numsSize));
     for(int i=0; i<numsSize; i++)
     {
+        //populate expected value
         arr[i].val = i+1; 
     }
     
     for(int i=0; i<numsSize; i++)
     {
+        //populate occurrences of each value
         arr[nums[i]-1].occurrences++; 
     }
     
@@ -28,10 +30,12 @@ int* findErrorNums(int* nums, int numsSize, int* returnSize){
     {
         if(arr[i].occurrences == 0)
         {
+            //missing value
             ret[1] = arr[i].val;
         }
         if(arr[i].occurrences == 2)
         {
+            //value occuring twice
             ret[0] = arr[i].val;
         }
     }
