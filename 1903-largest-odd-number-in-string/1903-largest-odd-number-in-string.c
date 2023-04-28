@@ -1,6 +1,6 @@
 bool isOdd(char digit)
 {
-    return (((int) digit % 2) == 1);
+    return ((digit & 1) == 1);
 }
 
 char * largestOddNumber(char * num){
