@@ -2,7 +2,7 @@ char * largestGoodInteger(char * num){
 
     char same[4] = {0};
     
-    int max = 0; 
+    char max = 0; 
     int numLen = strlen(num);
     
     
