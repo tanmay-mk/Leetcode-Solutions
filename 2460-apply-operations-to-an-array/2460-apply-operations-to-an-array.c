@@ -27,7 +27,7 @@ int* applyOperations(int* nums, int numsSize, int* returnSize){
         }
         if(arr[i] == arr[i+1])
         {
-            arr[i] *= 2; 
+            arr[i] = (arr[i] << 1); 
             arr[i+1] = 0;
         }
     }
