@@ -32,8 +32,6 @@ int* applyOperations(int* nums, int numsSize, int* returnSize){
         }
     }
     
-    printf("zeroes = %d\n", zeroes); 
-    
     for(int i=0; i<numsSize; i++)
     {
         if (arr[i] == 0)
@@ -44,8 +42,6 @@ int* applyOperations(int* nums, int numsSize, int* returnSize){
             {
                 i--;
             }
-                
-  
         }
     }
     
