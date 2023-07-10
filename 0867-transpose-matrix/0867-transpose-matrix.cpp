@@ -13,8 +13,7 @@ public:
         {
             for(ci = 0; ci < cols; ci++)
             {
-                retmtx[rri].push_back(matrix[ri][ci]);
-                rri++;
+                retmtx[rri++].push_back(matrix[ri][ci]);
             }
             rri = 0; 
         }
