@@ -1,50 +1,56 @@
 class Solution {
 public:
     
-    void shift(vector<int>& arr)
-    {
-        int len = arr.size();
-        int temp = arr[len-1]; 
-        
-        for(int i=len-1; i>0; i--)
-        {
-            arr[i] = arr[i-1]; 
-        }
-        
-        arr[0] = temp; 
-    }
-    
     vector<vector<int>> shiftGrid(vector<vector<int>>& grid, int k) {
         
         int rows = grid.size(); 
         int cols = grid[0].size(); 
-        
-        int elems = rows * cols; 
-        
-        vector<int> grid1d; 
-        
-        for(int ri=0; ri<rows; ri++)
+        int last = 0; 
+
+        while(k > 0)
         {
-            for(int ci=0; ci<cols; ci++)
+            
+            //get the very last element in the grid
+            last = grid[rows-1][cols-1]; 
+            
+            //now start shifting
+            int ri; 
+            int ci = cols-1; 
+            
+            if(ci == 0)
             {
-                grid1d.push_back(grid[ri][ci]);
+                last = grid[rows-1][0];
+                for(int ri = rows-1; ri > 0; ri--)
+                {
+                    grid[ri][0] = grid[ri-1][0];
+                }
             }
-        }
-        
-        while (k > 0)
-        {
-            shift(grid1d);
+            else
+            {
+                ri = rows-1; 
+                while(1)
+                {
+                    grid[ri][ci] = grid[ri][ci-1]; 
+                    ci--; 
+                    if(ci == 0)
+                    {
+                        ci = cols - 1;
+                        if(ri != 0)
+                        {
+                            grid[ri][0] = grid[ri-1][ci]; 
+                            ri--; 
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                }
+            }
+            grid[0][0] = last; 
             k--;
         }
         
-        int idx = 0; 
-        for(int ri=0; ri<rows; ri++)
-        {
-            for(int ci=0; ci<cols; ci++)
-            {
-                grid[ri][ci] = grid1d[idx++];
-            }
-        }
         return grid; 
     }
 };
