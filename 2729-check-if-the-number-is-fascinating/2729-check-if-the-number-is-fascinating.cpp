@@ -4,10 +4,7 @@ public:
         
         int numbers[10] = {0}; 
         
-        int twice = 2*n; 
-        int thrice = 3*n; 
-        
-        int arr[3] = {n, twice, thrice};
+        int arr[3] = {n, 2*n, 3*n};
         
         int idx = 0; 
         while(idx < 3)
