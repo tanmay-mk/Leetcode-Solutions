@@ -33,9 +33,9 @@ char * categorizeBox(int length, int width, int height, int mass){
     }
 
     
-    if (isBulky == false && isHeavy == false)    
+    if (isBulky == true && isHeavy == true)    
     {
-        return arr[neither]; 
+        return arr[both]; 
     }
     else if (isBulky == false && isHeavy == true)    
     {
@@ -45,5 +45,5 @@ char * categorizeBox(int length, int width, int height, int mass){
     {
         return arr[bulky]; 
     }
-    return arr[both];    
+    return arr[neither];    
 }
