@@ -3,24 +3,13 @@
  */
 int* runningSum(int* nums, int numsSize, int* returnSize){
 
-    /*determine size of array to be returned*/
     *returnSize = numsSize; 
+    int *arr = (int *)malloc(sizeof(int) * numsSize);
     
-    /*initialize dynamically allocated array*/
-    int *arr = (int *)malloc(sizeof(int)*numsSize);  
-    memset(arr, 0,sizeof(int)*numsSize);
-
-    arr[0] = nums[0];
-    for (int i = 1; i<numsSize; i++)
+    arr[0] = nums[0]; 
+    for(int i = 1; i < numsSize; i++)
     {
-        int sum = 0;
-        for (int j = 0; j<=i; j++)
-        {
-            sum += nums[j];   
-        }
-        arr[i] = sum;
+        arr[i] = arr[i-1] + nums[i]; 
     }
-    
     return arr; 
-    
 }
