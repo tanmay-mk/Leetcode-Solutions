@@ -3,30 +3,34 @@
  */
 int* evenOddBit(int n, int* returnSize){
 
-    *returnSize = 2; 
-    int *arr = (int *)malloc(sizeof(int)*(*returnSize));
-    memset(arr, 0, (sizeof(int)*(*returnSize))); 
+   *returnSize  = 2; 
+    int *arr = (int *)malloc(sizeof(int)*2);
     
     int even = 0, odd = 0; 
-    int idx = 0; 
+    bool isEven = true;  
+    
     while(n > 0)
     {
-        if((n & 1) == 1)
+        if (isEven == true)
         {
-            if((idx & 1) == 0)
+            if ((n & 1) != 0)
             {
-                even++; 
+                even++;
             }
-            else
+            isEven = false;
+        }
+        else
+        {
+            if ((n & 1) != 0)
             {
                 odd++;
             }
+            isEven = true;
         }
-        idx++;
-        n = (n >> 1); 
+        n = (n >> 1);
     }
     
-   arr[0] = even;
-   arr[1] = odd;
-   return arr;
+    arr[0] = even; 
+    arr[1] = odd;
+    return arr; 
 }
