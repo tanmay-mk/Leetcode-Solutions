@@ -1,5 +1,3 @@
-#define CONCAT(a,b) (a##b)
-
 long long findTheArrayConcVal(int* nums, int numsSize){
 
     if(numsSize == 1)
