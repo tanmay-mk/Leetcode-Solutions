@@ -36,7 +36,7 @@ int countSymmetricIntegers(int low, int high){
         else if ((low >= 1000) && (low < 10000))
         {
             my_itoa_decimal(low, number); 
-            if (((number[0] - '0')+(number[1] - '0')) == ((number[2] - '0')+(number[3] - '0')))
+            if (((number[0])+(number[1])) == ((number[2])+(number[3])))
             {
                 count++;
             }
