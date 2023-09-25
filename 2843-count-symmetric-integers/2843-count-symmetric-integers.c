@@ -31,7 +31,6 @@ int countSymmetricIntegers(int low, int high){
             {
                 count++;
             }
-            memset(number, 0, 5); 
         }
         else if ((low >= 1000) && (low < 10000))
         {
@@ -40,7 +39,6 @@ int countSymmetricIntegers(int low, int high){
             {
                 count++;
             }
-            memset(number, 0, 5);
         }
         low++;  
     }
