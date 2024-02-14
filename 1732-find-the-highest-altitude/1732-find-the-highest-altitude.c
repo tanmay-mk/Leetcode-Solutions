@@ -1,21 +1,31 @@
+int largestAltitude(int* gain, int gainSize) 
+{
+    int *ans = (int *)malloc((gainSize+1) * (sizeof(int)));
+    memset(ans, 0, ((gainSize+1) * (sizeof(int))));
+    int maximum = 0; 
 
-
-int largestAltitude(int* gain, int gainSize){
-
-    int netGainArrSize = gainSize+1;
-    int *netGain = (int *)malloc(sizeof(int)*netGainArrSize);
-    memset(netGain, 0, sizeof(int)*netGainArrSize);
+    ans[0] = 0;
     
-    netGain[0] = 0;
-    int maxGain = netGain[0];
-    for(int i = 0; i<gainSize; i++)
+    for (int i = 1; i < (gainSize+1); i++)
     {
-        netGain[i+1] = netGain[i]+gain[i];
-        if(netGain[i+1] > maxGain)
+         for (int j = 0; j <= (i-1) ; j++)
+         {
+             ans[i] += gain[j];
+         } 
+    }
+    
+
+    for (int k =0; k < (gainSize+1); k++)
+    {
+        if(ans[0] < ans[k])
         {
-            maxGain = netGain[i+1];
+            ans[0] = ans[k];
         }
     }
-    free(netGain);
-    return maxGain;
+    
+    maximum = ans[0];
+    
+    free(ans);
+    
+    return maximum;
 }
