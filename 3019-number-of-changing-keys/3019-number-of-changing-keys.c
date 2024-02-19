@@ -2,7 +2,7 @@ char toLowercase(char c)
 {
     if (c >= 'A' && c <= 'Z')
     {
-        return (char)(c+32); 
+        return (char)(c | (1 << 5)); 
     }
     return c;
 }
