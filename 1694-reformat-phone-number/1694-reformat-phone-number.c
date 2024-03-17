@@ -18,11 +18,8 @@ void RemoveChar(char *s, char target)
 
 char* reformatNumber(char* number) {
     
-    printf("Before space: %s\n", number);
     RemoveChar(number, ' ');
-    printf("After space, before hyphen: %s\n", number);  
     RemoveChar(number, '-');
-    printf("After hyphen: %s\n", number);
     
     int numLen = strlen(number);
     
