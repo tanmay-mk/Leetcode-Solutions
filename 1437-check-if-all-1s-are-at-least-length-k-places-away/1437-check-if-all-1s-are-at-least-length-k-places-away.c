@@ -6,7 +6,7 @@ bool kLengthApart(int* nums, int numsSize, int k) {
     }
     
     int idx = 0; 
-    int prev = 0, curr = 0; 
+    int prev = 0; 
     
     //skip all leading zeroes
     while(nums[idx] == 0)
